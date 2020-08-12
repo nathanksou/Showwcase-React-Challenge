@@ -1,6 +1,6 @@
 import React from 'react';
-import { AppDiv, AppHeader, Title, RotateAppLogo, AppLink } from './AppComponents';
-import logo from '../logo.svg';
+import { AppDiv, AppHeader, Title, RotateAppLogo, AppLink } from './components/AppComponents';
+import logo from './logo.svg';
 
 function App() {
   return (
