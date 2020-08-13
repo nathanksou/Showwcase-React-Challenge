@@ -7,3 +7,11 @@ export const Button = styled.button`
   border-radius: 3px;
   background-color: white;
 `;
+
+export const Input = styled.input`
+  padding: 0.5em;
+  margin: 0.5em;
+  color: black;
+  background: white;
+  border-radius: 3px;
+`;
