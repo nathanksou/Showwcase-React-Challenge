@@ -3,7 +3,7 @@ import Home from './components/Home';
 import Main from './components/Main';
 
 function App() {
-  const [name, setName] = useState('');
+  const [name, setName] = useState('nate');
 
   return (
     <div>

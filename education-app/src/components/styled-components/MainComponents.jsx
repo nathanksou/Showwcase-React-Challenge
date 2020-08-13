@@ -26,6 +26,24 @@ export const MainHeader = styled.div`
 
 export const MainBody = styled.div`
   width: 100%;
-  flex: 4;
+  flex: 9;
+  display: flex;
   background-color: #ccc;
+`;
+
+export const SidePanel = styled.div`
+  flex: 1;
+  background-color: #ddd;
+`;
+
+export const EducationList = styled.div`
+  flex: 3;
+  background-color: #eee;
+`;
+
+export const EducationEntry = styled.div`
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 3px;
 `;

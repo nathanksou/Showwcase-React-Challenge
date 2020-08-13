@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+export const Wrapper = styled.div`
+  margin: 0.5em;
+  padding: 0.5em;
+`;
+
 export const Button = styled.button`
   font-size: 1em;
   padding: 0.25em 1em;
