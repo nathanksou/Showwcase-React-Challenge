@@ -36,12 +36,12 @@ export const SidePanel = styled.div`
   background-color: #ddd;
 `;
 
-export const EducationList = styled.div`
+export const EducationListView = styled.div`
   flex: 3;
   background-color: #eee;
 `;
 
-export const EducationEntry = styled.div`
+export const EducationEntryView = styled.div`
   margin: 10px;
   padding: 10px;
   border: 1px solid black;

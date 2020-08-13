@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div>
-      { name ? (
+      {name ? (
         <Main name={name} />
       ) : (
         <Home setName={setName} />
