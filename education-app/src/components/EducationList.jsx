@@ -1,13 +1,12 @@
 import React from 'react';
-import { EducationListView, EducationEntryView } from './styled-components/MainComponents';
+import { EducationListView } from './styled-components/MainComponents';
+import EducationEntry from './EducationEntry';
 
-const EducationList = (props) => {
+const EducationList = ({ educations }) => {
   return (
     <EducationListView>
-      {(props.experiences.length > 0) ? (
-        props.experiences.map((educationExperience) =>
-          <EducationEntryView>Education Experience</EducationEntryView>
-        )
+      {(educations.length > 0) ? (
+        educations.map(education => <EducationEntry education={education} />)
       ) : (
         <div>No education experience</div>
       )}

@@ -3,18 +3,17 @@ import { Wrapper, Button } from './styled-components/Components';
 import { MainPage, MainHeader, MainBody, SidePanel } from './styled-components/MainComponents';
 import EducationList from './EducationList';
 
-const Main = (props) => {
-  const [educationExperiences, setEducationExperiences] = useState(['Education Experience 1', 'Education Experience 2', 'Education Experience 3']);
-
+const Main = ({ name }) => {
+  const [educations, setEducations] = useState([{ schoolName: 'UC Irvine', degree: 'Bachelors', fieldOfStudy: 'Computer Science', startYear: 2014, endYear: 2019, grade: 3.8, description: "" }, { schoolName: 'UC San Diego', degree: 'Bachelors', fieldOfStudy: 'Computer Science', startYear: 2014, endYear: 2019, grade: 3.8, description: "" }, { schoolName: 'UCLA', degree: 'Bachelors', fieldOfStudy: 'Computer Science', startYear: 2014, endYear: 2019, grade: 3.8, description: "" }]);
   return (
     <MainPage>
       <MainHeader>
-        <Wrapper>Welcome to {props.name}'s education page!</Wrapper>
+        <Wrapper>Welcome to {name}'s education page!</Wrapper>
         <Wrapper><Button>Add new education</Button></Wrapper>
       </MainHeader>
       <MainBody>
         <SidePanel>Side</SidePanel>
-        <EducationList experiences={educationExperiences} />
+        <EducationList educations={educations} />
       </MainBody>
     </MainPage>
   );
