@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Button, Input } from './styles/Components';
-import { HomePage, HomeContainer, HomeHeader, HomeBody } from './styles/HomeComponents';
+import { Button, Input } from './styled-components/Components';
+import { HomePage, HomeContainer, HomeHeader, HomeBody } from './styled-components/HomeComponents';
 
 const Home = (props) => {
   const [text, setText] = useState('');
