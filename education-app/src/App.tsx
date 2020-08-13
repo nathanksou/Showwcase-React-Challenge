@@ -2,9 +2,15 @@ import React, { useState } from 'react';
 import Home from './components/Home';
 
 function App() {
+  const [name, setName] = useState('');
+
   return (
     <div>
-      <Home />
+      { name ? (
+        <div>Logged In</div>
+      ) : (
+        <Home setName={setName} />
+      )}
     </div>
   );
 }

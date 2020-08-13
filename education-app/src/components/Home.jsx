@@ -5,6 +5,12 @@ import { HomePage, HomeContainer, HomeHeader, HomeBody } from './styles/HomeComp
 const Home = (props) => {
   const [text, setText] = useState('');
 
+  const handleEnterButton = () => {
+    props.setName(text);
+    setText('');
+    document.getElementById('inputName').value = '';
+  };
+
   return (
     <HomePage>
       <HomeContainer>
@@ -16,10 +22,10 @@ const Home = (props) => {
             <label htmlFor="name">Type your name and click "Enter" below to begin!</label>
           </div>
           <div>
-            <Input type="text" placeholder="Your name" onChange={(event) => setText(event.target.value)}/>
+            <Input id='inputName' type="text" placeholder="Your name" onChange={(event) => setText(event.target.value)}/>
           </div>
           <div>
-            <Button>Enter</Button>
+            <Button onClick={handleEnterButton}>Enter</Button>
           </div>
         </HomeBody>
       </HomeContainer>
