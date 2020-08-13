@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Input } from './styles/Components';
 import { HomePage, HomeContainer, HomeHeader, HomeBody } from './styles/HomeComponents';
 
 const Home = (props) => {
+  const [text, setText] = useState('');
+
   return (
     <HomePage>
       <HomeContainer>
@@ -11,10 +13,10 @@ const Home = (props) => {
         </HomeHeader>
         <HomeBody>
           <div>
-            <label for="name">Type your name and click "Enter" below to begin!</label>
+            <label htmlFor="name">Type your name and click "Enter" below to begin!</label>
           </div>
           <div>
-            <Input type="text" placeholder="Your name" required />
+            <Input type="text" placeholder="Your name" onChange={(event) => setText(event.target.value)}/>
           </div>
           <div>
             <Button>Enter</Button>
