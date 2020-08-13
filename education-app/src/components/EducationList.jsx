@@ -1,4 +1,5 @@
 import React from 'react';
+import { Wrapper } from './styled-components/Components';
 import { EducationListView } from './styled-components/MainComponents';
 import EducationEntry from './EducationEntry';
 
@@ -8,7 +9,7 @@ const EducationList = ({ educations }) => {
       {(educations.length > 0) ? (
         educations.map(education => <EducationEntry education={education} />)
       ) : (
-        <div>No education experience</div>
+        <Wrapper>No education experience</Wrapper>
       )}
     </EducationListView>
   );

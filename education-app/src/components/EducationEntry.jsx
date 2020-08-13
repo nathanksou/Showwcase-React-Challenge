@@ -3,7 +3,7 @@ import { EducationEntryView } from './styled-components/MainComponents';
 
 const EducationEntry = ({ education }) => {
   return (
-  <EducationEntryView>{education.schoolName}</EducationEntryView>
+    <EducationEntryView>{education.schoolName}</EducationEntryView>
   );
 };
 
