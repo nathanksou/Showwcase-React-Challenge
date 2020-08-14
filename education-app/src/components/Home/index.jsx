@@ -7,10 +7,10 @@ const Home = ({ setName }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     setName(input);
-    resetInput();
+    resetForm();
   };
 
-  const resetInput = () => {
+  const resetForm = () => {
     setInput('');
     document.getElementById('name-form').reset();
   }

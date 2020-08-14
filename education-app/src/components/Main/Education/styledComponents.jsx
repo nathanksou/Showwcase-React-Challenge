@@ -5,9 +5,9 @@ export const modalStyles = ({
     backgroundColor: 'rgba(0, 0, 0, 0.75)'
   },
   content: {
-    top: '100px',
-    left: '100px',
-    right: '100px',
-    bottom: '100px'
+    top: '10em',
+    left: '10em',
+    right: '10em',
+    bottom: '10em'
   }
 });
