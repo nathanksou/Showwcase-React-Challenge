@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import ReactModal from 'react-modal';
-import { Wrapper, Button } from '../Components';
+import { Button } from '../Components';
 import { MainPage, MainHeader, MainBody } from './MainComponents';
 import EducationModal from './Education/EducationModal';
 import EducationList from './Education/EducationList';
@@ -14,36 +13,16 @@ const Main = ({ name }) => {
   const handleCloseModal = () => setShowModal(false);
 
   const handleEducationsUpdate = (education) => {
-    if (education.schoolName !== '') {
-      setEducations(educations => [education, ...educations]);
-    }
+    if (education.schoolName !== '') setEducations(educations => [education, ...educations]);
     handleCloseModal();
   };
 
   return (
     <MainPage>
+      <EducationModal isOpen={showModal} handleEducationsUpdate={handleEducationsUpdate} />
       <MainHeader>
-        <Wrapper>Welcome to {name}'s education page!</Wrapper>
-        <Wrapper>
-          <Button onClick={handleOpenModal}>Add new education</Button>
-        </Wrapper>
-        <ReactModal
-          isOpen={showModal}
-          contentLabel="Add Education Experience"
-          style={{
-            overlay: {
-              backgroundColor: 'rgba(0, 0, 0, 0.75)'
-            },
-            content: {
-              top: '100px',
-              left: '100px',
-              right: '100px',
-              bottom: '100px'
-            }
-          }}
-        >
-          <EducationModal handleEducationsUpdate={handleEducationsUpdate} />
-        </ReactModal>
+        <div>Welcome to {name}'s education page!</div>
+        <Button onClick={handleOpenModal}>Add new education</Button>
       </MainHeader>
       <MainBody>
         <SidePanel educations={educations} />

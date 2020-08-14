@@ -6,10 +6,11 @@ export const Wrapper = styled.div`
 `;
 
 export const Button = styled.button`
-  font-size: 1em;
-  padding: 0.25em 1em;
+  font-size: 0.75em;
+  border: none;
   border-radius: 3px;
-  background-color: white;
+  background-color: #2a9d8f;
+  color: #fff;
 `;
 
 export const Input = styled.input`

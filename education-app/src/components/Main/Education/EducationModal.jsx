@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import Modal from 'react-modal';
 import AsyncSelect from 'react-select/async';
+import { modalStyles } from './styledComponents';
 
-const EducationModal = ({ handleEducationsUpdate }) => {
+const EducationModal = ({ isOpen, handleEducationsUpdate }) => {
   const [schoolName, setSchoolName] = useState('');
   const [degree, setDegree] = useState('');
   const [fieldOfStudy, setFieldOfStudy] = useState('');
@@ -24,6 +26,7 @@ const EducationModal = ({ handleEducationsUpdate }) => {
   };
 
   return (
+    <Modal isOpen={isOpen} contentLabel="Add Education Experience" style={modalStyles}>
     <form id="educationForm" onSubmit={handleSubmit}>
       <div>
         Name of School:
@@ -67,6 +70,7 @@ const EducationModal = ({ handleEducationsUpdate }) => {
       </div>
       <input type="submit" value="Save" />
     </form>
+    </Modal>
   );
 };
 
