@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AsyncSelect from 'react-select/async';
 
 const EducationModal = ({ handleEducationsUpdate }) => {
   const [schoolName, setSchoolName] = useState('');
@@ -14,13 +15,19 @@ const EducationModal = ({ handleEducationsUpdate }) => {
     handleEducationsUpdate({ schoolName, degree, fieldOfStudy, startYear, endYear, grade, description });
   };
 
+  const fetchSchoolData = (query) => {
+    return fetch(`http://universities.hipolabs.com/search?name=${query}`)
+      .then(response => response.json())
+      .then(result => {
+        return Array.from(result).slice(0, 10).map(school => ({ value: school.name, label: school.name }));
+     });
+  };
+
   return (
     <form id="educationForm" onSubmit={handleSubmit}>
       <div>
-        <label>
-          Name of School:
-          <input type="text" name="schoolName" onChange={(event) => setSchoolName(event.target.value)} />
-        </label>
+        Name of School:
+        <AsyncSelect defaultOptions loadOptions={fetchSchoolData} onChange={(school) => setSchoolName(school.value)} />
       </div>
       <div>
         <label>
