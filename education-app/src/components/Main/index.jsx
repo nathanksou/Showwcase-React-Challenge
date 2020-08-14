@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import ReactModal from 'react-modal';
-import { Wrapper, Button } from './styled-components/Components';
-import { MainPage, MainHeader, MainBody } from './styled-components/MainComponents';
-import EducationModal from './EducationModal';
-import EducationList from './EducationList';
-import SidePanel from './SidePanel';
+import { Wrapper, Button } from '../Components';
+import { MainPage, MainHeader, MainBody } from './MainComponents';
+import EducationModal from './Education/EducationModal';
+import EducationList from './Education/EducationList';
+import SidePanel from './SidePanel/SidePanel';
 
 const Main = ({ name }) => {
   const [educations, setEducations] = useState([{ schoolName: 'UC Irvine', degree: 'Bachelors', fieldOfStudy: 'Computer Science', startYear: 2014, endYear: 2019, grade: 3.8, description: "" }, { schoolName: 'UC San Diego', degree: 'Bachelors', fieldOfStudy: 'Computer Science', startYear: 2014, endYear: 2019, grade: 3.8, description: "" }, { schoolName: 'UCLA', degree: 'Bachelors', fieldOfStudy: 'Computer Science', startYear: 2014, endYear: 2019, grade: 3.8, description: "" }]);

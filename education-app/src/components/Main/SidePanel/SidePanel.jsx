@@ -1,6 +1,6 @@
 import React from 'react';
-import { Wrapper } from './styled-components/Components';
-import { SidePanelView } from './styled-components/MainComponents';
+import { Wrapper } from '../../Components';
+import { SidePanelView } from '../MainComponents';
 import SidePanelEntry from './SidePanelEntry';
 
 const SidePanel = ({ educations }) => {

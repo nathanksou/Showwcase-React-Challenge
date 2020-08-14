@@ -1,6 +1,6 @@
 import React from 'react';
-import { Wrapper } from './styled-components/Components';
-import { EducationListView } from './styled-components/MainComponents';
+import { Wrapper } from '../../Components';
+import { EducationListView } from '../MainComponents';
 import EducationEntry from './EducationEntry';
 
 const EducationList = ({ educations }) => {

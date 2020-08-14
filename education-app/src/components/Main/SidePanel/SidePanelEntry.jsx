@@ -1,5 +1,5 @@
 import React from 'react';
-import { EducationEntryView } from './styled-components/MainComponents';
+import { EducationEntryView } from '../MainComponents';
 
 const SidePanelEntry = ({ education }) => {
   return (

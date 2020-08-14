@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Home from './components/Home';
-import Main from './components/Main';
+import Home from './components/Home/index';
+import Main from './components/Main/index';
 
 function App() {
   const [name, setName] = useState('nate');
