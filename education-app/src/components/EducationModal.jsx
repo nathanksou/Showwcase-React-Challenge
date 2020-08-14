@@ -55,10 +55,10 @@ const EducationModal = ({ handleEducationsUpdate }) => {
       <div>
         <label>
           Description:
-          <input type="text" name="description" onChange={(event) => setDegree(event.target.value)} />
+          <input type="text" name="description" onChange={(event) => setDescription(event.target.value)} />
         </label>
       </div>
-      <input type="submit" value="Submit" />
+      <input type="submit" value="Save" />
     </form>
   );
 };
