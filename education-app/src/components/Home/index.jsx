@@ -1,35 +1,31 @@
 import React, { useState } from 'react';
-import { Button, Input } from '../Components';
-import { HomePage, HomeContainer, HomeHeader, HomeBody } from './HomeComponents';
+import './home.css';
 
-const Home = (props) => {
-  const [text, setText] = useState('');
+const Home = ({ setName }) => {
+  const [input, setInput] = useState('');
 
-  const handleEnterButton = () => {
-    props.setName(text);
-    setText('');
-    document.getElementById('inputName').value = '';
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setName(input);
+    resetInput();
   };
 
+  const resetInput = () => {
+    setInput('');
+    document.getElementById('name-form').reset();
+  }
+
   return (
-    <HomePage>
-      <HomeContainer>
-        <HomeHeader>
-          <div>Hi there! Welcome to your education showcase.</div>
-        </HomeHeader>
-        <HomeBody>
-          <div>
-            <label htmlFor="name">Type your name and click "Enter" below to begin!</label>
-          </div>
-          <div>
-            <Input id='inputName' type="text" placeholder="Your name" onChange={(event) => setText(event.target.value)}/>
-          </div>
-          <div>
-            <Button onClick={handleEnterButton}>Enter</Button>
-          </div>
-        </HomeBody>
-      </HomeContainer>
-    </HomePage>
+    <div className="home-page">
+      <div className="home-container">
+        <div className="home-title">Hi there! Welcome to your education showcase.</div>
+        <form id="name-form" onSubmit={handleSubmit}>
+          <label>Type your name and click "Enter" below to begin!</label>
+          <input type="text" name="name" required onChange={(event) => setInput(event.target.value)} />
+          <input type="submit" value="Enter" />
+        </form>
+      </div>
+    </div>
   );
 };
 
