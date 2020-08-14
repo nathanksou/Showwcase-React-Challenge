@@ -31,7 +31,7 @@ export const MainBody = styled.div`
   background-color: #ccc;
 `;
 
-export const SidePanel = styled.div`
+export const SidePanelView = styled.div`
   flex: 1;
   background-color: #ddd;
 `;

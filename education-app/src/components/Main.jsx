@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import ReactModal from 'react-modal';
 import { Wrapper, Button } from './styled-components/Components';
-import { MainPage, MainHeader, MainBody, SidePanel } from './styled-components/MainComponents';
+import { MainPage, MainHeader, MainBody } from './styled-components/MainComponents';
 import EducationModal from './EducationModal';
 import EducationList from './EducationList';
+import SidePanel from './SidePanel';
 
 const Main = ({ name }) => {
   const [educations, setEducations] = useState([{ schoolName: 'UC Irvine', degree: 'Bachelors', fieldOfStudy: 'Computer Science', startYear: 2014, endYear: 2019, grade: 3.8, description: "" }, { schoolName: 'UC San Diego', degree: 'Bachelors', fieldOfStudy: 'Computer Science', startYear: 2014, endYear: 2019, grade: 3.8, description: "" }, { schoolName: 'UCLA', degree: 'Bachelors', fieldOfStudy: 'Computer Science', startYear: 2014, endYear: 2019, grade: 3.8, description: "" }]);
@@ -45,7 +46,7 @@ const Main = ({ name }) => {
         </ReactModal>
       </MainHeader>
       <MainBody>
-        <SidePanel>Side</SidePanel>
+        <SidePanel educations={educations} />
         <EducationList educations={educations} />
       </MainBody>
     </MainPage>
