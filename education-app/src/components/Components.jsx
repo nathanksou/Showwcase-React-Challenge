@@ -6,6 +6,8 @@ export const Wrapper = styled.div`
 `;
 
 export const Button = styled.button`
+  width: 50%;
+  height: 2em;
   font-size: 0.75em;
   border: none;
   border-radius: 3px;

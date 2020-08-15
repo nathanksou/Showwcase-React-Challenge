@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import AsyncSelect from 'react-select/async';
-import { modalStyles } from './styledComponents';
+import TextField from '@material-ui/core/TextField';
+import { Form, SelectContainer, SubmitButton, materialStyles, modalStyles, selectStyles } from './styledComponents';
 
 const EducationModal = ({ isOpen, handleEducationsUpdate }) => {
   const [schoolName, setSchoolName] = useState('');
@@ -11,6 +12,14 @@ const EducationModal = ({ isOpen, handleEducationsUpdate }) => {
   const [endYear, setEndYear] = useState('');
   const [grade, setGrade] = useState('');
   const [description, setDescription] = useState('');
+
+  const fetchSchoolData = (query) => {
+    return fetch(`http://universities.hipolabs.com/search?name=${query}`)
+      .then(response => response.json())
+      .then(result => {
+        return Array.from(result).slice(0, 10).map(school => ({ value: school.name, label: school.name }));
+     });
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -30,13 +39,7 @@ const EducationModal = ({ isOpen, handleEducationsUpdate }) => {
     setDescription('');
   }
 
-  const fetchSchoolData = (query) => {
-    return fetch(`http://universities.hipolabs.com/search?name=${query}`)
-      .then(response => response.json())
-      .then(result => {
-        return Array.from(result).slice(0, 10).map(school => ({ value: school.name, label: school.name }));
-     });
-  };
+  const classes = materialStyles();
 
   return (
     <Modal
@@ -44,54 +47,74 @@ const EducationModal = ({ isOpen, handleEducationsUpdate }) => {
       contentLabel="Add Education Experience"
       style={modalStyles}
     >
-      <form id="education-form" onSubmit={handleSubmit}>
-        <div>
-          Name of School:
+      <Form id="education-form" onSubmit={handleSubmit}>
+        <SelectContainer>
           <AsyncSelect
+            styles={selectStyles}
+            placeholder="Name of School"
             defaultOptions
             loadOptions={fetchSchoolData}
             onChange={(school) => setSchoolName(school.value)}
             required
           />
+        </SelectContainer>
+        <div className={classes.root} >
+          <TextField
+            label="Degree"
+            id="outlined-margin-normal"
+            className={classes.textField}
+            margin="normal"
+            variant="outlined"
+            onChange={(event) => setDegree(event.target.value)}
+          />
+          <TextField
+            label="Field of Study"
+            id="outlined-margin-normal"
+            className={classes.textField}
+            margin="normal"
+            variant="outlined"
+            onChange={(event) => setFieldOfStudy(event.target.value)}
+          />
+          <TextField
+            label="Grade"
+            id="outlined-margin-normal"
+            className={classes.textField}
+            margin="normal"
+            variant="outlined"
+            onChange={(event) => setGrade(event.target.value)}
+          />
+          <TextField
+            label="Start Year"
+            id="outlined-margin-normal"
+            className={classes.textField}
+            margin="normal"
+            variant="outlined"
+            onChange={(event) => setStartYear(event.target.value)}
+          />
+          <TextField
+            label="End Year"
+            id="outlined-margin-normal"
+            className={classes.textField}
+            margin="normal"
+            variant="outlined"
+            onChange={(event) => setEndYear(event.target.value)}
+          />
+          <TextField
+            id="outlined-full-width"
+            label="Description"
+            style={{ margin: 8 }}
+            placeholder="Built an education showcase platform."
+            fullWidth
+            margin="normal"
+            InputLabelProps={{
+              shrink: true,
+            }}
+            variant="outlined"
+            onChange={(event) => setDescription(event.target.value)}
+          />
         </div>
-        <div>
-          <label>
-            Degree:
-            <input type="text" name="degree" onChange={(event) => setDegree(event.target.value)} />
-          </label>
-        </div>
-        <div>
-          <label>
-            Field of Study:
-            <input type="text" name="fieldOfStudy" onChange={(event) => setFieldOfStudy(event.target.value)} />
-          </label>
-        </div>
-        <div>
-          <label>
-            Start Year:
-            <input type="text" name="startYear" onChange={(event) => setStartYear(event.target.value)} />
-          </label>
-        </div>
-        <div>
-          <label>
-            End Year:
-            <input type="text" name="endYear" onChange={(event) => setEndYear(event.target.value)} />
-          </label>
-        </div>
-        <div>
-          <label>
-            Grade:
-            <input type="text" name="grade" onChange={(event) => setGrade(event.target.value)} />
-          </label>
-        </div>
-        <div>
-          <label>
-            Description:
-            <input type="text" name="description" onChange={(event) => setDescription(event.target.value)} />
-          </label>
-        </div>
-        <input type="submit" value="Save" />
-      </form>
+        <SubmitButton />
+      </Form>
     </Modal>
   );
 };
