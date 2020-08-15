@@ -21,11 +21,20 @@ export const MainHeader = styled.div`
   text-align: center;
   display: flex;
   flex-direction: column;
-  background-color: #aaa;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background-color: #2a9d8f;
 `;
 
 export const MainBody = styled.div`
   width: 100%;
   flex: 9;
   display: flex;
+`;
+
+export const Title = styled.div`
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
 `;

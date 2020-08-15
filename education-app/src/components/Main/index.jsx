@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { MainPage, MainHeader, MainBody } from './styledComponents';
+import { MainPage, MainHeader, MainBody, Title } from './styledComponents';
+import Button from '@material-ui/core/Button';
 import EducationModal from './Education/EducationModal';
 import EducationList from './Education/EducationList';
 import SidePanel from './SidePanel/SidePanel';
@@ -20,8 +21,8 @@ const Main = ({ name }) => {
     <MainPage>
       <EducationModal isOpen={showModal} handleEducationsUpdate={handleEducationsUpdate} />
       <MainHeader>
-        <div>Welcome to {name}'s education page!</div>
-        <button onClick={handleOpenModal}>Add new education</button>
+        <Title>Welcome to {name}'s education page!</Title>
+        <Button variant="contained" color="primary" onClick={handleOpenModal}>Add new education</Button>
       </MainHeader>
       <MainBody>
         <SidePanel educations={educations} />
