@@ -6,8 +6,8 @@ const EducationEntry = ({ education: { schoolName, degree, fieldOfStudy, startYe
     <EntryContainer>
       <Title>{`${degree} ${fieldOfStudy} @ ${schoolName}`}</Title>
       <YearGrade>
-        <div>{`${startYear} - ${endYear}`}</div>
-        <div>{`${grade} GPA`}</div>
+        {startYear ? (<div>{`${startYear} - ${endYear}`}</div>) : (<div></div>)}
+        {grade ? (<div>{`${grade} GPA`}</div>) : (<div></div>)}
       </YearGrade>
       <Description>{`${description}`}</Description>
     </EntryContainer>

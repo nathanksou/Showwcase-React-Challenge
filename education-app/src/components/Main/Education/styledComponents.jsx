@@ -62,13 +62,14 @@ export const ListContainer = styled.div`
   margin-top: 1em;
   margin-bottom: 1em;
   margin-right: 1em;
+  border: 2px solid #2a9d8f;
+  border-radius: 5px;
 `;
 
 export const EntryContainer = styled.div`
   margin: 1em;
   padding: 1em;
-  border: 2px solid #2a9d8f;
-  border-radius: 3px;
+  border-bottom: 1px solid #2a9d8f;
   text-align: left;
 `;
 

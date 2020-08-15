@@ -11,8 +11,8 @@ const Home = ({ setName }) => {
   };
 
   const resetForm = () => {
-    setInput('');
     document.getElementById('name-form').reset();
+    setInput('');
   }
 
   return (
