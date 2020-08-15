@@ -4,7 +4,7 @@ import AsyncSelect from 'react-select/async';
 import TextField from '@material-ui/core/TextField';
 import { Form, SelectContainer, SubmitButton, materialStyles, modalStyles, selectStyles } from './styledComponents';
 
-const EducationModal = ({ isOpen, handleEducationsUpdate }) => {
+const EducationModal = ({ isOpen, handleCloseModal, handleEducationsUpdate }) => {
   const [schoolName, setSchoolName] = useState('');
   const [degree, setDegree] = useState('');
   const [fieldOfStudy, setFieldOfStudy] = useState('');
@@ -44,6 +44,7 @@ const EducationModal = ({ isOpen, handleEducationsUpdate }) => {
   return (
     <Modal
       isOpen={isOpen}
+      onRequestClose={handleCloseModal}
       contentLabel="Add Education Experience"
       style={modalStyles}
     >

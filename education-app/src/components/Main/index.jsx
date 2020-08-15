@@ -19,7 +19,7 @@ const Main = ({ name }) => {
 
   return (
     <MainPage>
-      <EducationModal isOpen={showModal} handleEducationsUpdate={handleEducationsUpdate} />
+      <EducationModal isOpen={showModal} handleCloseModal={handleCloseModal} handleEducationsUpdate={handleEducationsUpdate} />
       <MainHeader>
         <Title>Welcome to {name}'s education page!</Title>
         <Button variant="contained" color="primary" onClick={handleOpenModal}>Add new education</Button>
