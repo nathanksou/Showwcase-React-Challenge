@@ -29,10 +29,3 @@ export const MainBody = styled.div`
   flex: 9;
   display: flex;
 `;
-
-export const SidePanelView = styled.div`
-  flex: 1;
-  margin: 1em;
-  border: 2px dashed #2a9d8f;
-  border-radius: 5px;
-`;

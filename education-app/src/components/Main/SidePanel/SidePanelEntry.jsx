@@ -1,9 +1,9 @@
 import React from 'react';
-import { EntryContainer } from '../Education/styledComponents';
+import { EntryContainer } from './styledComponents';
 
-const SidePanelEntry = ({ education }) => {
+const SidePanelEntry = ({ education: {schoolName}}) => {
   return (
-    <EntryContainer>{education.schoolName}</EntryContainer>
+    <EntryContainer>{schoolName}</EntryContainer>
   );
 };
 

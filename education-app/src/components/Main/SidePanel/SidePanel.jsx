@@ -1,16 +1,16 @@
 import React from 'react';
-import { SidePanelView } from '../styledComponents';
+import { ListContainer } from './styledComponents';
 import SidePanelEntry from './SidePanelEntry';
 
 const SidePanel = ({ educations }) => {
   return (
-    <SidePanelView>
+    <ListContainer>
       {(educations.length > 0) ? (
         educations.map(education => <SidePanelEntry education={education} />)
       ) : (
         <div></div>
       )}
-    </SidePanelView>
+    </ListContainer>
   );
 };
 
