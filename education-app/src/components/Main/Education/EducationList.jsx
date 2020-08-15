@@ -8,7 +8,7 @@ const EducationList = ({ educations }) => {
       {(educations.length > 0) ? (
         educations.map(education => <EducationEntry education={education} />)
       ) : (
-        <div>No education experience</div>
+        <div style={{color: "#2a9d8f"}}>No education experience</div>
       )}
     </ListContainer>
   );

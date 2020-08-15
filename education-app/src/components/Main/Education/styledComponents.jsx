@@ -81,8 +81,10 @@ export const YearGrade = styled.div`
   font-size: 0.75em;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 0.5em;
 `;
 
 export const Description = styled.div`
   font-size: 0.75em;
+  margin-bottom: 0.5em;
 `;

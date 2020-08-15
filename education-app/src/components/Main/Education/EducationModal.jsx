@@ -100,11 +100,13 @@ const EducationModal = ({ isOpen, handleEducationsUpdate }) => {
             onChange={(event) => setEndYear(event.target.value)}
           />
           <TextField
-            id="outlined-full-width"
+            id="outlined-multiline-static"
             label="Description"
             style={{ margin: 8 }}
             placeholder="Built an education showcase platform."
             fullWidth
+            multiline
+            rows={4}
             margin="normal"
             InputLabelProps={{
               shrink: true,

@@ -6,7 +6,7 @@ import EducationList from './Education/EducationList';
 import SidePanel from './SidePanel/SidePanel';
 
 const Main = ({ name }) => {
-  const [educations, setEducations] = useState([{ schoolName: 'UC Irvine', degree: 'Bachelors', fieldOfStudy: 'Computer Science', startYear: 2014, endYear: 2019, grade: 3.8, description: "" }, { schoolName: 'UC San Diego', degree: 'Bachelors', fieldOfStudy: 'Computer Science', startYear: 2014, endYear: 2019, grade: 3.8, description: "" }, { schoolName: 'UCLA', degree: 'Bachelors', fieldOfStudy: 'Computer Science', startYear: 2014, endYear: 2019, grade: 3.8, description: "" }]);
+  const [educations, setEducations] = useState([]);
 
   const [showModal, setShowModal] = useState(false);
   const handleOpenModal = () => setShowModal(true);
