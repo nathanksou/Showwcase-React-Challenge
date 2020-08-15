@@ -27,7 +27,6 @@ export const SubmitButton = styled.input.attrs({
   color: #fff;
 `;
 
-
 export const materialStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -57,3 +56,33 @@ export const modalStyles = ({
 export const selectStyles = ({
   menu: (provided) => ({ ...provided, zIndex: 9999})
 });
+
+export const ListContainer = styled.div`
+  flex: 3;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-right: 1em;
+`;
+
+export const EntryContainer = styled.div`
+  margin: 1em;
+  padding: 1em;
+  border: 2px solid #2a9d8f;
+  border-radius: 3px;
+  text-align: left;
+`;
+
+export const Title = styled.div`
+  font-weight: bold;
+  margin-bottom: 0.5em;
+`;
+
+export const YearGrade = styled.div`
+  font-size: 0.75em;
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const Description = styled.div`
+  font-size: 0.75em;
+`;

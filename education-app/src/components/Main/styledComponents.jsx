@@ -28,22 +28,11 @@ export const MainBody = styled.div`
   width: 100%;
   flex: 9;
   display: flex;
-  background-color: #ccc;
 `;
 
 export const SidePanelView = styled.div`
   flex: 1;
-  background-color: #ddd;
-`;
-
-export const EducationListView = styled.div`
-  flex: 3;
-  background-color: #eee;
-`;
-
-export const EducationEntryView = styled.div`
-  margin: 10px;
-  padding: 10px;
-  border: 1px solid black;
-  border-radius: 3px;
+  margin: 1em;
+  border: 2px dashed #2a9d8f;
+  border-radius: 5px;
 `;

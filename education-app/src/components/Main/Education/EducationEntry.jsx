@@ -1,9 +1,16 @@
 import React from 'react';
-import { EducationEntryView } from '../MainComponents';
+import { EntryContainer, Title, YearGrade, Description} from './styledComponents';
 
-const EducationEntry = ({ education }) => {
+const EducationEntry = ({ education: { schoolName, degree, fieldOfStudy, startYear, endYear, grade, description }}) => {
   return (
-    <EducationEntryView>{education.schoolName}</EducationEntryView>
+    <EntryContainer>
+      <Title>{`${degree} ${fieldOfStudy} @ ${schoolName}`}</Title>
+      <YearGrade>
+        <div>{`${startYear} - ${endYear}`}</div>
+        <div>{`${grade} GPA`}</div>
+      </YearGrade>
+      <Description>{`${description}`}</Description>
+    </EntryContainer>
   );
 };
 

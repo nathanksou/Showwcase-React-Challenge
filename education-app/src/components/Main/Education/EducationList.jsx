@@ -1,17 +1,16 @@
 import React from 'react';
-import { Wrapper } from '../../Components';
-import { EducationListView } from '../MainComponents';
+import { ListContainer } from './styledComponents';
 import EducationEntry from './EducationEntry';
 
 const EducationList = ({ educations }) => {
   return (
-    <EducationListView>
+    <ListContainer>
       {(educations.length > 0) ? (
         educations.map(education => <EducationEntry education={education} />)
       ) : (
-        <Wrapper>No education experience</Wrapper>
+        <div>No education experience</div>
       )}
-    </EducationListView>
+    </ListContainer>
   );
 };
 

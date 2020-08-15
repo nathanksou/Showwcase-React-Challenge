@@ -1,9 +1,9 @@
 import React from 'react';
-import { EducationEntryView } from '../MainComponents';
+import { EntryContainer } from '../Education/styledComponents';
 
 const SidePanelEntry = ({ education }) => {
   return (
-    <EducationEntryView>{education.schoolName}</EducationEntryView>
+    <EntryContainer>{education.schoolName}</EntryContainer>
   );
 };
 

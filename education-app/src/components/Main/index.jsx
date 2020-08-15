@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Button } from '../Components';
-import { MainPage, MainHeader, MainBody } from './MainComponents';
+import { MainPage, MainHeader, MainBody } from './styledComponents';
 import EducationModal from './Education/EducationModal';
 import EducationList from './Education/EducationList';
 import SidePanel from './SidePanel/SidePanel';
@@ -22,7 +21,7 @@ const Main = ({ name }) => {
       <EducationModal isOpen={showModal} handleEducationsUpdate={handleEducationsUpdate} />
       <MainHeader>
         <div>Welcome to {name}'s education page!</div>
-        <Button onClick={handleOpenModal}>Add new education</Button>
+        <button onClick={handleOpenModal}>Add new education</button>
       </MainHeader>
       <MainBody>
         <SidePanel educations={educations} />
